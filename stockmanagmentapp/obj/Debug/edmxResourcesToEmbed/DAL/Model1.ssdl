@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="maindbModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CATEGORY">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="categoryname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="isdeleted" Type="bit" Nullable="false" />
+    <Property Name="deleteddate" Type="date" />
+  </EntityType>
+  <EntityType Name="CUSTOMER">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customername" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="isdeleted" Type="bit" Nullable="false" />
+    <Property Name="deleteddate" Type="date" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="adminname" />
+    </Key>
+    <Property Name="adminname" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="adminpassword" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="productname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="categoryid" Type="int" Nullable="false" />
+    <Property Name="stockamount" Type="int" Nullable="false" />
+    <Property Name="price" Type="int" Nullable="false" />
+    <Property Name="isdeleted" Type="bit" Nullable="false" />
+    <Property Name="deleteddate" Type="date" />
+  </EntityType>
+  <EntityType Name="SALES">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="productid" Type="int" Nullable="false" />
+    <Property Name="customerid" Type="int" Nullable="false" />
+    <Property Name="categoryid" Type="int" Nullable="false" />
+    <Property Name="productsalesamount" Type="int" Nullable="false" />
+    <Property Name="productsalesprice" Type="int" Nullable="false" />
+    <Property Name="salesdate" Type="date" Nullable="false" />
+    <Property Name="isdeleted" Type="bit" Nullable="false" />
+    <Property Name="deleteddate" Type="date" />
+  </EntityType>
+  <EntityContainer Name="maindbModel1StoreContainer">
+    <EntitySet Name="CATEGORY" EntityType="Self.CATEGORY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SALES" EntityType="Self.SALES" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
