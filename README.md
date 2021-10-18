@@ -1,1 +1,2 @@
-Stock Managment
+# stockmanagmentapp
+ C# Project
