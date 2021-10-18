@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="maindbModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CATEGORY">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="categoryname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="isdeleted" Type="Boolean" Nullable="false" />
+    <Property Name="deleteddate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="CUSTOMER">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="isdeleted" Type="Boolean" Nullable="false" />
+    <Property Name="deleteddate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="adminname" />
+    </Key>
+    <Property Name="adminname" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="adminpassword" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="categoryid" Type="Int32" Nullable="false" />
+    <Property Name="stockamount" Type="Int32" Nullable="false" />
+    <Property Name="price" Type="Int32" Nullable="false" />
+    <Property Name="isdeleted" Type="Boolean" Nullable="false" />
+    <Property Name="deleteddate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="SALE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productid" Type="Int32" Nullable="false" />
+    <Property Name="customerid" Type="Int32" Nullable="false" />
+    <Property Name="categoryid" Type="Int32" Nullable="false" />
+    <Property Name="productsalesamount" Type="Int32" Nullable="false" />
+    <Property Name="productsalesprice" Type="Int32" Nullable="false" />
+    <Property Name="salesdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="isdeleted" Type="Boolean" Nullable="false" />
+    <Property Name="deleteddate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="maindbEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CATEGORies" EntityType="Self.CATEGORY" />
+    <EntitySet Name="CUSTOMERs" EntityType="Self.CUSTOMER" />
+    <EntitySet Name="logins" EntityType="Self.login" />
+    <EntitySet Name="PRODUCTs" EntityType="Self.PRODUCT" />
+    <EntitySet Name="SALES" EntityType="Self.SALE" />
+  </EntityContainer>
+</Schema>
