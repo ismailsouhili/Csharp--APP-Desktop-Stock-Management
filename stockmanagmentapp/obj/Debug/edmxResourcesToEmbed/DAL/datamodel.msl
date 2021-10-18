@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="maindbModelStoreContainer" CdmEntityContainer="maindbEntities">
+    <EntitySetMapping Name="CATEGORies">
+      <EntityTypeMapping TypeName="maindbModel.CATEGORY">
+        <MappingFragment StoreEntitySet="CATEGORY">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="categoryname" ColumnName="categoryname" />
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="deleteddate" ColumnName="deleteddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUSTOMERs">
+      <EntityTypeMapping TypeName="maindbModel.CUSTOMER">
+        <MappingFragment StoreEntitySet="CUSTOMER">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="customername" ColumnName="customername" />
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="deleteddate" ColumnName="deleteddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logins">
+      <EntityTypeMapping TypeName="maindbModel.login">
+        <MappingFragment StoreEntitySet="login">
+          <ScalarProperty Name="adminname" ColumnName="adminname" />
+          <ScalarProperty Name="adminpassword" ColumnName="adminpassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTs">
+      <EntityTypeMapping TypeName="maindbModel.PRODUCT">
+        <MappingFragment StoreEntitySet="PRODUCT">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="productname" ColumnName="productname" />
+          <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+          <ScalarProperty Name="stockamount" ColumnName="stockamount" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="deleteddate" ColumnName="deleteddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SALES">
+      <EntityTypeMapping TypeName="maindbModel.SALE">
+        <MappingFragment StoreEntitySet="SALES">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="productid" ColumnName="productid" />
+          <ScalarProperty Name="customerid" ColumnName="customerid" />
+          <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+          <ScalarProperty Name="productsalesamount" ColumnName="productsalesamount" />
+          <ScalarProperty Name="productsalesprice" ColumnName="productsalesprice" />
+          <ScalarProperty Name="salesdate" ColumnName="salesdate" />
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="deleteddate" ColumnName="deleteddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
